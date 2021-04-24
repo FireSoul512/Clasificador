@@ -38,9 +38,11 @@ def predict(file):
 
   return answer
 
-predict('./predecir/1.jpg')
-predict('./predecir/2.jpg')
-predict('./predecir/download.jpg')
+for x in range(1,15):
+  y = str(x)
+  predict('./predecir/prueba ('+y+').jpg')
+  print(y)
+  print()
 
 '''predict('./Definir/ambulancia (1).jpg')
 predict('./Definir/ambulancia (2).jpg')
