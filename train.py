@@ -37,7 +37,6 @@ def iamgenes():
         width_shift_range=0.2,
         height_shift_range=0.2,
         shear_range=0.2,
-        zoom_range=0.2,
         horizontal_flip=True,
         fill_mode='nearest'
         )
@@ -50,12 +49,12 @@ def iamgenes():
         batch_size=25,
         class_mode='categorical')
 
-    '''img = load_img('data/entrenamiento/Excavadoras/00026.jpg')
+    '''img = load_img('data/entrenamiento/Limosinas/000967_00.jpg')
     x = img_to_array(img)
     x = x.reshape((1,)+x.shape)
 
     i = 0
-    for batch in entrenamiento_datagen.flow(x, batch_size=1, save_to_dir='preview', save_prefix='bus', save_format='jpeg'):
+    for batch in entrenamiento_datagen.flow(x, batch_size=1, save_to_dir='preview', save_prefix='limu_new', save_format='jpeg'):
         i += 1
         if i < 20:
             break'''
@@ -97,10 +96,10 @@ def model():
 def trail_model(cnn, entrenamiento_generador, validacion_generador):
     cnn.fit(
         entrenamiento_generador,
-        steps_per_epoch=27,
-        epochs=50,
+        steps_per_epoch=29,
+        epochs=500,
         validation_data=validacion_generador,
-        validation_steps=19)
+        validation_steps=20)
 
     target_dir = './modelo/'
     if not os.path.exists(target_dir):

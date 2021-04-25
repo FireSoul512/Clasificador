@@ -3,8 +3,8 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.models import load_model
 
 longitud, altura = 150, 150
-modelo = './modelo/modelo.h5'
-pesos_modelo = './modelo/pesos.h5'
+modelo = './modelo_4/modelo.h5'
+pesos_modelo = './modelo_4/pesos.h5'
 cnn = load_model(modelo)
 cnn.load_weights(pesos_modelo)
 
@@ -30,21 +30,21 @@ def predict(file):
   elif answer == 6 :
     print("Excavadora")
   elif answer == 7 :
-    print("Limusina")
-  elif answer == 8 :
     print("Motocarro")
-  elif answer == 9 :
+  elif answer == 8 :
     print("Motocicleta")
+  elif answer == 9 :
+    print("EL patin ese")
 
   return answer
 
-for x in range(1,15):
+'''.git\for x in range(1,15):
   y = str(x)
   predict('./predecir/prueba ('+y+').jpg')
   print(y)
-  print()
+  print()'''
 
-'''predict('./Definir/ambulancia (1).jpg')
+predict('./Definir/ambulancia (1).jpg')
 predict('./Definir/ambulancia (2).jpg')
 predict('./Definir/bicicleta (1).jpg')
 predict('./Definir/bicicleta (2).jpg')
@@ -58,9 +58,9 @@ predict('./Definir/coche (1).jpg')
 predict('./Definir/coche (2).jpg')
 predict('./Definir/excavadora (1).jpg')
 predict('./Definir/excavadora (1).jpg')
-predict('./Definir/lumusina (1).jpg')
-predict('./Definir/lumusina (2).jpg')
 predict('./Definir/motocarro (1).jpg')
 predict('./Definir/motocarro (2).jpg')
 predict('./Definir/motocicleta (1).jpg')
-predict('./Definir/motocicleta (2).jpg')'''
+predict('./Definir/motocicleta (2).jpg')
+predict('./Definir/Segway (1).jpg')
+predict('./Definir/Segway (2).jpg')
